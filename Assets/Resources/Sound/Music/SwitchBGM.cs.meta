@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b896961948e9b2a4c957aef8466fd5e2
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - outsideClip: {fileID: 8300000, guid: 3413c7cfafafa69488a086263e646bc1, type: 3}
+  - insideClip: {fileID: 8300000, guid: 15597bb3d840da24db32bba5e22b7996, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
