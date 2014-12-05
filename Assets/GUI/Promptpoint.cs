@@ -7,6 +7,7 @@ public class Promptpoint : MonoBehaviour {
 
 	public string promptType = "";
 	private bool shownInteract = false;
+    private bool shownCrouch = false;
 	private bool shownSprint = false;
 	private bool shownJump = false;
 	private bool shownKey = false;
@@ -26,6 +27,11 @@ public class Promptpoint : MonoBehaviour {
 				shownJump = true;
 				FindObjectOfType<guiPrompt>().ActivateJumpPrompt();
 			}
+            else if (promptType.Equals("Crouch") && shownCrouch == false)
+            {
+                shownCrouch = true;
+                FindObjectOfType<guiPrompt>().ActivateCrouchPrompt();
+            }
 			else if (promptType.Equals ("Key") && shownKey == false) {
 				shownKey = true;
 				FindObjectOfType<guiPrompt>().ActivateKeyPrompt();

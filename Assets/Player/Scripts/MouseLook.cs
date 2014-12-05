@@ -17,7 +17,6 @@ public class MouseLook : MonoBehaviour {
     // How much of the original sensitivity will be used while sprinting?
     // For example, if sensitivity is 15 and sprintSensitivityModifier is 0.1f,
     // then sprinting sensitivity will be 1.5f
-    public float sprintSensitivityModifier = 0.1f;
 
     private float currentSensitivityX;
     private float currentSensitivityY;
@@ -66,8 +65,8 @@ public class MouseLook : MonoBehaviour {
     {
         if (Input.GetButton("Sprint") && characterMotor.LocalizedInput.z > 0.0f)
         {
-            currentSensitivityX = sensitivityX * sprintSensitivityModifier;
-            currentSensitivityY = sensitivityY * sprintSensitivityModifier;
+            currentSensitivityX = sensitivityX * 0.6f;
+            currentSensitivityY = sensitivityY * 0.6f;
         }
         else
         {
