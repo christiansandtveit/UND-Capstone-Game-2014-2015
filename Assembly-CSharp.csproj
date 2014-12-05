@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FEB142BB-0F6B-63BF-391C-32E4CF4CAE7A}</ProjectGuid>
+	<ProjectGuid>{B81DF3F9-34E6-B5B3-0A81-FE7C325E6B1B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -83,6 +83,7 @@
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\puzzleLever.cs" />
      <Compile Include="Assets\Objects\PressureSwitch\PressureSwitch.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\Player\Scripts\Crouch.cs" />
      <Compile Include="Assets\Player\Scripts\FOVChanger.cs" />
      <Compile Include="Assets\Player\Scripts\FPSInputController.cs" />
      <Compile Include="Assets\Player\Scripts\HeadBob.cs" />

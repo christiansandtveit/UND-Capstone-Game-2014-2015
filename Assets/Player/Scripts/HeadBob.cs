@@ -9,8 +9,8 @@ public class HeadBob : MonoBehaviour
 	private float midpoint;
 	public float normalBobSpeed = 0.15f;
 	public float normalBobAmount = 0.03f;
-    public float sprintingBobSpeed = 0.35f;
-    public float sprintingBobAmount = 0.05f;
+    public float sprintingBobSpeed = 0.18f;
+    public float sprintingBobAmount = 0.04f;
     public float minimumSpeedForBob = 0.5f;
     private CharacterMotor characterMotor;
 	private AudioClip footSteps;

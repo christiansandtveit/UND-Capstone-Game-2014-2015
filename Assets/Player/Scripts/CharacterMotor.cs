@@ -43,7 +43,7 @@ public class CharacterMotor : MonoBehaviour
     public class CharacterMotorMovement
     {
         // The maximum horizontal speed when moving
-        public float maxForwardSpeed = 3.0f;
+        public float maxForwardSpeed = 10.0f;
         public float maxSprintSpeed = 6.0f;
         public float maxSidewaysSpeed = 3.0f;
         public float maxBackwardsSpeed = 2.0f;
@@ -217,6 +217,10 @@ public class CharacterMotor : MonoBehaviour
     {
         // Only allow sprinting if the character is moving forward (i.e. can't strafe and sprint at same time)
         if (!IsSprinting())
+            inputSprint = false;
+
+        //Dont allow sprinting while crouching
+        if (Input.GetKey("c"))
             inputSprint = false;
 
         // We copy the actual velocity into a temporary variable that we can manipulate.

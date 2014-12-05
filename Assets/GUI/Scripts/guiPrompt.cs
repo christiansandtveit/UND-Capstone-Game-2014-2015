@@ -10,11 +10,12 @@ public class guiPrompt : MonoBehaviour {
 	private float lastUpdate;
 
 	private Texture eImage;
+    private Texture cImage;
 	private Texture spaceImage;
 	private Texture shiftImage;
 
 	public enum Page {
-		None, Interact, Jump, Sprint, Key, MoreKeys
+		None, Crouch, Interact, Jump, Sprint, Key, MoreKeys
 	}
 	
 	private Page currentPage;
@@ -23,6 +24,7 @@ public class guiPrompt : MonoBehaviour {
 		promptSecond = 0;
 		lastUpdate = Time.time;
 		eImage = Resources.Load ("EKey") as Texture;
+        cImage = Resources.Load ("Ckey") as Texture;
 		spaceImage = Resources.Load ("SpaceKey") as Texture;
 		shiftImage = Resources.Load ("ShiftKey") as Texture;
 		currentPage = Page.None;
@@ -43,6 +45,9 @@ public class guiPrompt : MonoBehaviour {
 
 	void OnGUI() {
 		switch (currentPage) {
+            case Page.Crouch:
+                ShowCrouch();
+                break;
 			case Page.Interact:
 				ShowInteract();
 				break;
@@ -76,6 +81,11 @@ public class guiPrompt : MonoBehaviour {
 		currentPage = Page.Interact;
 	}
 
+    public void ActivateCrouchPrompt() // call to display Crouch prompt
+    { 
+        currentPage = Page.Crouch;
+    }
+
 	public void ActivateJumpPrompt() { // call to display Jump prompt
 		currentPage = Page.Jump;
 	}
@@ -108,6 +118,23 @@ public class guiPrompt : MonoBehaviour {
 		GUI.skin.label.alignment = TextAnchor.UpperLeft;
 		GUILayout.EndArea();
 	}
+
+    void ShowCrouch()
+    {
+        GUI.color = Color.white;
+        GUI.skin.label.fontSize = 32;
+        GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+        BeginPage(1000, 100);
+        GUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.Label("Press", GUILayout.Width(100), GUILayout.Height(75));
+        GUILayout.Label(cImage, GUILayout.Width(100), GUILayout.Height(75));
+        GUILayout.Label("to Crouch", GUILayout.Width(200), GUILayout.Height(75));
+        GUILayout.FlexibleSpace();
+        GUILayout.EndHorizontal();
+        GUI.skin.label.alignment = TextAnchor.UpperLeft;
+        GUILayout.EndArea();
+    }
 
 	void ShowJump() {
 		GUI.color = Color.white;
