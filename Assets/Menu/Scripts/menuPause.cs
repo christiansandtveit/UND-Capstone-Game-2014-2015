@@ -39,7 +39,7 @@ public class menuPause : MonoBehaviour
 	}
 	
 	void LateUpdate () {
-		if (Input.GetKeyDown("escape") || Input.GetKeyDown ("return")) {
+		if (Input.GetKeyDown("escape") || Input.GetKeyDown ("return") || Input.GetKeyDown("joystick button 7")) {
 			switch (currentPage) {
 			case Page.None: 
 				PauseGame(true); 
