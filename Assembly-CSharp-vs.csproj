@@ -82,6 +82,7 @@
      <Compile Include="Assets\Objects\Lever\Lever.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\LeverPuzzle.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\puzzleLever.cs" />
+     <Compile Include="Assets\Objects\Miscallaneous\MoveSpider.cs" />
      <Compile Include="Assets\Objects\PressureSwitch\PressureSwitch.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Player\Scripts\Crouch.cs" />
