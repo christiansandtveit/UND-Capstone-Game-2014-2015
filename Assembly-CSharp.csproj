@@ -63,6 +63,7 @@
      <Compile Include="Assets\Menu\Scripts\menuDeath.cs" />
      <Compile Include="Assets\Menu\Scripts\menuMain.cs" />
      <Compile Include="Assets\Menu\Scripts\menuPause.cs" />
+     <Compile Include="Assets\MovingBug.cs" />
      <Compile Include="Assets\Objects\AbstractResetable.cs" />
      <Compile Include="Assets\Objects\Activatable\Activatable.cs" />
      <Compile Include="Assets\Objects\Activatable\ArrowTrap\ArrowTrap.cs" />
@@ -81,6 +82,7 @@
      <Compile Include="Assets\Objects\Lever\Lever.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\LeverPuzzle.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\puzzleLever.cs" />
+     <Compile Include="Assets\Objects\Miscallaneous\MoveSpider.cs" />
      <Compile Include="Assets\Objects\PressureSwitch\PressureSwitch.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Player\Scripts\Crouch.cs" />
