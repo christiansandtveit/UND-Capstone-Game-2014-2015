@@ -24,7 +24,7 @@ public class Crouch : MonoBehaviour
 
         float scale = 1.0f;
 
-        if (Input.GetButton("Crouch"))
+        if (Input.GetKey("c"))
         {
             scale = 0.5f;
         }
