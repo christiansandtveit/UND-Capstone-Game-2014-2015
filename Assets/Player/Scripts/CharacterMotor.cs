@@ -1,5 +1,6 @@
 //Michael Schilling
 //CSci 448
+/* Modified by Christian Sandtveit to not allow player to sprint while crouching */
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -219,8 +220,8 @@ public class CharacterMotor : MonoBehaviour
         if (!IsSprinting())
             inputSprint = false;
 
-        //Dont allow sprinting while crouching
-        if (Input.GetKey("c"))
+        //Dont allow sprinting while crouching - Added by Christian Sandtveit
+        if (Input.GetButton("Crouch"))
             inputSprint = false;
 
         // We copy the actual velocity into a temporary variable that we can manipulate.

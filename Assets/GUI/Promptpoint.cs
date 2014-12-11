@@ -1,5 +1,6 @@
 ﻿//Randall Howatt
 //CSci 448
+//Modified by Christian Sandtveit to show the crouch prompt
 using UnityEngine;
 using System.Collections;
 

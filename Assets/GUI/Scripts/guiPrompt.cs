@@ -1,5 +1,6 @@
 ﻿//Randall Howatt
 //CSci 448
+//Modified by Christian Sandtveit to be able to show the crouch prompt
 using UnityEngine;
 using System.Collections;
 
@@ -81,7 +82,7 @@ public class guiPrompt : MonoBehaviour {
 		currentPage = Page.Interact;
 	}
 
-    public void ActivateCrouchPrompt() // call to display Crouch prompt
+    public void ActivateCrouchPrompt() // call to display Crouch prompt - added by Christian Sandtveit
     { 
         currentPage = Page.Crouch;
     }
@@ -119,6 +120,7 @@ public class guiPrompt : MonoBehaviour {
 		GUILayout.EndArea();
 	}
 
+    //ShowCrouch() added by Christian Sandtveit to be able to show crouch prompt
     void ShowCrouch()
     {
         GUI.color = Color.white;
