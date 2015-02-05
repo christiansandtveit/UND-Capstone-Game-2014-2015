@@ -81,6 +81,7 @@
      <Compile Include="Assets\Objects\Lever\Lever.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\LeverPuzzle.cs" />
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\puzzleLever.cs" />
+     <Compile Include="Assets\Objects\Miscallaneous\InteractBook.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\MoveSpider.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\MovingBug.cs" />
      <Compile Include="Assets\Objects\PressureSwitch\PressureSwitch.cs" />
