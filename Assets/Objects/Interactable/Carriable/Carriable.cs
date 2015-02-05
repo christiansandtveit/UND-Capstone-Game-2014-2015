@@ -8,6 +8,17 @@ public abstract class Carriable : Interactable {
 	public bool isBeingCarried = false;
 	SpringJoint joint;
 
+    void Update()
+    {
+        if (Input.GetButton("Fire1") && (isBeingCarried))
+        {
+            Destroy(joint);
+            isBeingCarried = false;
+            rigidbody.constraints = RigidbodyConstraints.None;
+            collider.isTrigger = false;
+            rigidbody.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
+        }
+    }
 	public override void Interact(Transform interactor)
 	{
 		if (!isBeingCarried)

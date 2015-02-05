@@ -1,6 +1,5 @@
 ﻿//Randall Howatt
 //CSci 448
-//Modified by Christian Sandtveit to be able to show the crouch prompt
 using UnityEngine;
 using System.Collections;
 
@@ -10,6 +9,11 @@ public class guiPrompt : MonoBehaviour {
 	private int numberOfKeys = 0;
 	private float lastUpdate;
 
+    private Texture bButtonImage;
+    private Texture aButtonImage;
+    private Texture xButtonImage;
+    private Texture yButtonImage;
+    private Texture lbButtonImage;
 	private Texture eImage;
     private Texture cImage;
 	private Texture spaceImage;
@@ -24,6 +28,11 @@ public class guiPrompt : MonoBehaviour {
 	void Start () {
 		promptSecond = 0;
 		lastUpdate = Time.time;
+        bButtonImage = Resources.Load("xboxControllerButtonB") as Texture;
+        aButtonImage = Resources.Load("xboxControllerButtonA") as Texture;
+        xButtonImage = Resources.Load("xboxControllerButtonX") as Texture;
+        yButtonImage = Resources.Load("xboxControllerButtonY") as Texture;
+        lbButtonImage = Resources.Load("xboxControllerLeftShoulder") as Texture;
 		eImage = Resources.Load ("EKey") as Texture;
         cImage = Resources.Load ("Ckey") as Texture;
 		spaceImage = Resources.Load ("SpaceKey") as Texture;
@@ -82,7 +91,7 @@ public class guiPrompt : MonoBehaviour {
 		currentPage = Page.Interact;
 	}
 
-    public void ActivateCrouchPrompt() // call to display Crouch prompt - added by Christian Sandtveit
+    public void ActivateCrouchPrompt() // call to display Crouch prompt
     { 
         currentPage = Page.Crouch;
     }
@@ -112,7 +121,14 @@ public class guiPrompt : MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace ();
 		GUILayout.Label ("Press", GUILayout.Width (100), GUILayout.Height (75));
-		GUILayout.Label (eImage, GUILayout.Width (100));
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            GUILayout.Label(eImage, GUILayout.Width(100));
+        }
+        else
+        {
+            GUILayout.Label(xButtonImage, GUILayout.Width(100), GUILayout.Height(75));
+        }
 		GUILayout.Label ("to Interact with Objects", GUILayout.Width (350), GUILayout.Height (75));
 		GUILayout.FlexibleSpace ();
 		GUILayout.EndHorizontal ();
@@ -120,7 +136,6 @@ public class guiPrompt : MonoBehaviour {
 		GUILayout.EndArea();
 	}
 
-    //ShowCrouch() added by Christian Sandtveit to be able to show crouch prompt
     void ShowCrouch()
     {
         GUI.color = Color.white;
@@ -130,7 +145,14 @@ public class guiPrompt : MonoBehaviour {
         GUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
         GUILayout.Label("Press", GUILayout.Width(100), GUILayout.Height(75));
-        GUILayout.Label(cImage, GUILayout.Width(100), GUILayout.Height(75));
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            GUILayout.Label(cImage, GUILayout.Width(100), GUILayout.Height(75));
+        }
+        else {
+            GUILayout.Label(bButtonImage, GUILayout.Width(100), GUILayout.Height(75));
+        }
+
         GUILayout.Label("to Crouch", GUILayout.Width(200), GUILayout.Height(75));
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
@@ -146,7 +168,14 @@ public class guiPrompt : MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace ();
 		GUILayout.Label ("Press", GUILayout.Width (100), GUILayout.Height (75));
-		GUILayout.Label (spaceImage);
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            GUILayout.Label(spaceImage);
+        }
+        else
+        {
+            GUILayout.Label(aButtonImage, GUILayout.Width(100), GUILayout.Height(75));
+        }
 		GUILayout.Label ("to Jump", GUILayout.Width (125), GUILayout.Height (75));
 		GUILayout.FlexibleSpace ();
 		GUILayout.EndHorizontal ();
@@ -162,8 +191,15 @@ public class guiPrompt : MonoBehaviour {
 		GUILayout.BeginHorizontal ();
 		GUILayout.FlexibleSpace ();
 		GUILayout.Label ("Hold", GUILayout.Width (75), GUILayout.Height (75));
-		GUILayout.Label (shiftImage);
-		GUILayout.Label ("to Sprint", GUILayout.Width (130), GUILayout.Height (75));
+        if (Input.GetJoystickNames().Length == 0)
+        {
+            GUILayout.Label(shiftImage);
+        }
+        else
+        {
+            GUILayout.Label(lbButtonImage, GUILayout.Width(100), GUILayout.Height(75));
+        }
+        GUILayout.Label ("to Sprint", GUILayout.Width (130), GUILayout.Height (75));
 		GUILayout.FlexibleSpace ();
 		GUILayout.EndHorizontal ();
 		GUI.skin.label.alignment = TextAnchor.UpperLeft;
