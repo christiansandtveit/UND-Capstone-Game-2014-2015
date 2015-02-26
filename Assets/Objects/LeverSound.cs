@@ -6,7 +6,7 @@ using System.Collections;
 
 public class LeverSound : MonoBehaviour {
 
-    bool playing; //variable to indicate that sound si already playing
+    bool playing; //variable to indicate that sound is already playing
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +15,7 @@ public class LeverSound : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //Check Lever1 status
         if (InteractTimeTrialLever.lever1TimeTrialActive == true && playing == false)
         {
             audio.Play();
