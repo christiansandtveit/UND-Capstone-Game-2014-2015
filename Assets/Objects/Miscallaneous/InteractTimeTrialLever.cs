@@ -6,7 +6,8 @@ using System.Collections;
 
 public class InteractTimeTrialLever : MonoBehaviour {
 
-    float level1ActiveLength;
+    float lever1ActiveLength;
+    float lever2ActiveLength;
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
     public static bool lever1TimeTrialActive; //Static variable, will be accessed in other scripts
     public static bool lever2TimeTrialActive; //Static variable, will be accessed in other scripts
@@ -14,7 +15,8 @@ public class InteractTimeTrialLever : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        level1ActiveLength = 10.0f;
+        lever1ActiveLength = 10.0f;
+        lever2ActiveLength = 3.0f;
 	    rayLength = 1.5f;
         lever1TimeTrialActive = false;
         lever2TimeTrialActive = false;
@@ -33,13 +35,13 @@ public class InteractTimeTrialLever : MonoBehaviour {
                 if (hit.collider.tag == "Lever1") //If the ray hit the object with label Book1
                 {
                     lever1TimeTrialActive = true; //Allow OnGUI function to display on screen
-                    Invoke("DeactivateLever1", level1ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
+                    Invoke("DeactivateLever1", lever1ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever1");
                 }
                 if (hit.collider.tag == "Lever2") //If the ray hit the object with label Book1
                 {
                     lever2TimeTrialActive = true; //Allow OnGUI function to display on screen
-                    Invoke("DeactivateLever2", 5.0F); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
+                    Invoke("DeactivateLever2", lever2ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever2");
                 }
             }
@@ -58,5 +60,6 @@ public class InteractTimeTrialLever : MonoBehaviour {
     void DeactivateLever2()
     {
         lever2TimeTrialActive = false;
+        print("Lever2Deac");
     }
 }
