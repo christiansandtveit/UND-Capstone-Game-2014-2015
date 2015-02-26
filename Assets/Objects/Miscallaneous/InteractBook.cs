@@ -6,7 +6,6 @@ using System.Collections;
 
 public class InteractBook : MonoBehaviour
 {
-
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
     bool showBook1;
 
