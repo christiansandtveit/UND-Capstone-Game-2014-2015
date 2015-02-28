@@ -16,7 +16,7 @@ public class InteractTimeTrialLever : MonoBehaviour {
 	void Start () 
     {
         lever1ActiveLength = 10.0f;
-        lever2ActiveLength = 3.0f;
+        lever2ActiveLength = 10.0f;
 	    rayLength = 1.5f;
         lever1TimeTrialActive = false;
         lever2TimeTrialActive = false;
@@ -46,6 +46,15 @@ public class InteractTimeTrialLever : MonoBehaviour {
                 }
             }
         }
+
+        if (DeathOnContact.playerDead == true && lever1TimeTrialActive == true)
+        {
+            lever1TimeTrialActive = false;
+        }
+        else if (DeathOnContact.playerDead == true && lever2TimeTrialActive == true)
+        {
+            lever2TimeTrialActive = false;
+        }
 	
 	}
 
@@ -62,4 +71,6 @@ public class InteractTimeTrialLever : MonoBehaviour {
         lever2TimeTrialActive = false;
         print("Lever2Deac");
     }
+
+
 }
