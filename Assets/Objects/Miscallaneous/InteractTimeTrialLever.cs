@@ -12,6 +12,7 @@ public class InteractTimeTrialLever : MonoBehaviour {
     public static bool lever1TimeTrialActive; //Static variable, will be accessed in other scripts
     public static bool lever2TimeTrialActive; //Static variable, will be accessed in other scripts
 
+
 	// Use this for initialization
 	void Start () 
     {
@@ -50,12 +51,18 @@ public class InteractTimeTrialLever : MonoBehaviour {
         if (DeathOnContact.playerDead == true && lever1TimeTrialActive == true)
         {
             lever1TimeTrialActive = false;
+            CancelInvoke("DeactivateLever1");
         }
-        else if (DeathOnContact.playerDead == true && lever2TimeTrialActive == true)
+        if (DeathOnContact.playerDeadR == true && lever2TimeTrialActive == true)
         {
             lever2TimeTrialActive = false;
+            CancelInvoke("DeactivateLever2");
         }
-	
+        if (DeathOnContact.playerDeadL == true && lever2TimeTrialActive == true)
+        {
+            lever2TimeTrialActive = false;
+            CancelInvoke("DeactivateLever2");
+        }
 	}
 
     //Functiont to deactivate lever1
