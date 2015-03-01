@@ -17,7 +17,7 @@ public class InteractTimeTrialLever : MonoBehaviour {
 	void Start () 
     {
         lever1ActiveLength = 10.0f;
-        lever2ActiveLength = 10.0f;
+        lever2ActiveLength = 20.0f;
 	    rayLength = 1.5f;
         lever1TimeTrialActive = false;
         lever2TimeTrialActive = false;

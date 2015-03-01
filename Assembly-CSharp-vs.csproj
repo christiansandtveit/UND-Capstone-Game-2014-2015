@@ -87,6 +87,7 @@
      <Compile Include="Assets\Objects\Miscallaneous\InteractTimeTrialLever.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\MoveSpider.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\MovingBug.cs" />
+     <Compile Include="Assets\Objects\MoveWalls.cs" />
      <Compile Include="Assets\Objects\PressureSwitch\PressureSwitch.cs" />
      <Compile Include="Assets\Objects\Teleporter\Teleport.cs" />
      <Compile Include="Assets\Objects\TimeTrialVisibility.cs" />
