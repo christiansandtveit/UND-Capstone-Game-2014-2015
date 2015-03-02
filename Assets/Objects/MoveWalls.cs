@@ -12,7 +12,7 @@ public class MoveWalls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         originalPosition = transform.position;
-        velocity = 0.01f;
+        velocity = 0.007f;
 	}
 	
 	// Update is called once per frame
