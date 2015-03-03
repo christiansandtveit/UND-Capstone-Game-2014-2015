@@ -1,6 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Objects\Lever\Lever.cs">
     <Files>
       <File FileName="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs" Line="27" Column="17" />
       <File FileName="Assets\Objects\Lever\Lever.cs" Line="1" Column="1" />
