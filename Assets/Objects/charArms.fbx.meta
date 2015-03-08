@@ -128,7 +128,139 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: arms|armsAction
+      takeName: arms|armsAction
+      firstFrame: 0
+      lastFrame: 339
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arms
+        weight: 1
+      - path: arms/clavicle.L
+        weight: 1
+      - path: arms/clavicle.L/deltoid.L
+        weight: 1
+      - path: arms/clavicle.L/deltoid.L/upper_arm.L
+        weight: 1
+      - path: arms/clavicle.L/deltoid.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: arms/clavicle.R
+        weight: 1
+      - path: arms/clavicle.R/deltoid.R
+        weight: 1
+      - path: arms/clavicle.R/deltoid.R/upper_arm.R
+        weight: 1
+      - path: arms/clavicle.R/deltoid.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: arms/forearm.L.001
+        weight: 1
+      - path: arms/forearm.L.001/hand.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_index.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_index.L/f_index.01.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_index.L/f_index.01.L/f_index.02.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_index.L/f_index.01.L/f_index.02.L/f_index.03.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_middle.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_middle.L/f_middle.01.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_middle.L/f_middle.01.L/f_middle.02.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_middle.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_pinky.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_pinky.L/f_pinky.01.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_pinky.L/f_pinky.01.L/f_pinky.02.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_pinky.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_ring.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_ring.L/f_ring.01.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_ring.L/f_ring.01.L/f_ring.02.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/palm_ring.L/f_ring.01.L/f_ring.02.L/f_ring.03.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/thumb.01.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/thumb.01.L/thumb.02.L
+        weight: 1
+      - path: arms/forearm.L.001/hand.L/thumb.01.L/thumb.02.L/thumb.03.L
+        weight: 1
+      - path: arms/forearm.R.001
+        weight: 1
+      - path: arms/forearm.R.001/hand.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_index.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_index.R/f_index.01.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_index.R/f_index.01.R/f_index.02.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_index.R/f_index.01.R/f_index.02.R/f_index.03.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_middle.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_middle.R/f_middle.01.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_middle.R/f_middle.01.R/f_middle.02.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_middle.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_pinky.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_pinky.R/f_pinky.01.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_pinky.R/f_pinky.01.R/f_pinky.02.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_pinky.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_ring.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_ring.R/f_ring.01.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_ring.R/f_ring.01.R/f_ring.02.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/palm_ring.R/f_ring.01.R/f_ring.02.R/f_ring.03.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/thumb.01.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/thumb.01.R/thumb.02.R
+        weight: 1
+      - path: arms/forearm.R.001/hand.R/thumb.01.R/thumb.02.R/thumb.03.R
+        weight: 1
+      - path: arms:Body
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
