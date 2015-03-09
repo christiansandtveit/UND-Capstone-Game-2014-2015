@@ -101,6 +101,7 @@
      <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Player\Scripts\PlatformInputController.cs" />
      <Compile Include="Assets\Player\checkpoint\Checkpoint.cs" />
+     <Compile Include="Assets\Player\iceBlockPush.cs" />
      <Compile Include="Assets\Puzzles\CrushingWall\CrushingWall.cs" />
      <Compile Include="Assets\Puzzles\LightsOn\LightsOn.cs" />
      <Compile Include="Assets\Puzzles\LightsOn\LightsOnLever.cs" />
