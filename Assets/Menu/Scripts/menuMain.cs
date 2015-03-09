@@ -165,6 +165,22 @@ public class menuMain : MonoBehaviour {
 		if (GUILayout.Button("Level 2")) {
 			Application.LoadLevel ("Transition");
 		}
+        if (GUILayout.Button("Hub"))
+        {
+            Application.LoadLevel("Hub");
+        }
+        if (GUILayout.Button("Ice Cave"))
+        {
+            Application.LoadLevel("iceCave");
+        }
+        if (GUILayout.Button("Time Trial Level"))
+        {
+            Application.LoadLevel("TimeTrialLevel");
+        }
+        if (GUILayout.Button("Teleporter Level"))
+        {
+            Application.LoadLevel("TeleportPuzzle");
+        }
 		EndPage ();
 	}
 
