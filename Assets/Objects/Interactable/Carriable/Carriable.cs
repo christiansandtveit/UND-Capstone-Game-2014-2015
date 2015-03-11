@@ -16,7 +16,7 @@ public abstract class Carriable : Interactable {
             isBeingCarried = false;
             rigidbody.constraints = RigidbodyConstraints.None;
             collider.isTrigger = false;
-            rigidbody.AddForce(Camera.main.transform.forward * 15, ForceMode.Impulse);
+            rigidbody.AddForce(Camera.main.transform.forward * 20, ForceMode.Impulse);
         }
     }
 	public override void Interact(Transform interactor)
