@@ -19,6 +19,8 @@ public class Target : AbstractResetable
     public int value = 10000;
     private Vector3 current;
 
+ 
+
     private void Trigger()
     {
         triggeringObjectCount++;
@@ -92,15 +94,10 @@ public class Target : AbstractResetable
 
     void OnCollisionEnter(Collision other)
     {
-        current = other.transform.position;
         scoreKeeper.Increase(value);
         Trigger();
-        other.transform.position = current;
     }
-    void OnCollisionStay(Collision other)
-    {
-        other.transform.position = current;
-    }
+
 
     void OnTriggerEnter(Collider other)
     {
