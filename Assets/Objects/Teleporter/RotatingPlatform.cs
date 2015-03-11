@@ -13,8 +13,9 @@ public class RotatingPlatform : MonoBehaviour {
     
     void OnCollisionStay(Collision collision)
     {
-        //other.transform.Rotate(Vector3.right * 2);
-        gameObject.transform.Rotate(Vector3.right * 10);
+        
+        //collision.transform.Rotate(Vector3.right * 10);
+        
     }
 
 
