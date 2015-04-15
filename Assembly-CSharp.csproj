@@ -121,6 +121,7 @@
      <Compile Include="Assets\Story\Scripts\transitionStory.cs" />
      <Compile Include="Assets\Torches\Torch.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\sky5X\README.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.3/UnityEngine.UI.dll</HintPath>
  </Reference>
