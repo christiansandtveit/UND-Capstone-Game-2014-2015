@@ -4,7 +4,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class InteractTimeTrialLever : MonoBehaviour {
+public class InteractTimeTrialLever : MonoBehaviour
+{
 
     float lever1ActiveLength;
     float lever2ActiveLength;
@@ -13,35 +14,38 @@ public class InteractTimeTrialLever : MonoBehaviour {
     public static bool lever2TimeTrialActive; //Static variable, will be accessed in other scripts
 
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         lever1ActiveLength = 10.0f;
         lever2ActiveLength = 20.0f;
-	    rayLength = 1.5f;
+        rayLength = 1.5f;
         lever1TimeTrialActive = false;
         lever2TimeTrialActive = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        RaycastHit hit; 
-        Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); //Ray goes towards the mouse cursor
+        RaycastHit hit;
+        int x = Screen.width / 2;
+        int y = Screen.height / 2;
+
+        Ray ray = camera.ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
 
         if (Input.GetButton("Interact")) //If interact button is pressed, a ray will be sent out
         {
             if (Physics.Raycast(ray, out hit, rayLength)) //If the ray hit something
             {
-                if (hit.collider.tag == "Lever1") //If the ray hit the object with label Book1
+                if (hit.collider.tag == "Lever1") //If the ray hit the object with label Lever1
                 {
-                    lever1TimeTrialActive = true; //Allow OnGUI function to display on screen
+                    lever1TimeTrialActive = true; //set boolean to true
                     Invoke("DeactivateLever1", lever1ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever1");
                 }
-                if (hit.collider.tag == "Lever2") //If the ray hit the object with label Book1
+                if (hit.collider.tag == "Lever2") //If the ray hit the object with label Lever2
                 {
-                    lever2TimeTrialActive = true; //Allow OnGUI function to display on screen
+                    lever2TimeTrialActive = true; //set boolean to true
                     Invoke("DeactivateLever2", lever2ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever2");
                 }
@@ -63,7 +67,7 @@ public class InteractTimeTrialLever : MonoBehaviour {
             lever2TimeTrialActive = false;
             CancelInvoke("DeactivateLever2");
         }
-	}
+    }
 
     //Functiont to deactivate lever1
     void DeactivateLever1()
