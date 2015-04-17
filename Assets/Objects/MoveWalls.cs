@@ -17,7 +17,7 @@ public class MoveWalls : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (InteractTimeTrialLever.lever2TimeTrialActive == true)
+        if (InteractTimeTrialLever.lever2TimeTrialActive == true && CompleteTT2.completedTrial == false)
         {
             if (gameObject.name == "Left")
             {
@@ -28,7 +28,7 @@ public class MoveWalls : MonoBehaviour {
                 transform.position += new Vector3(velocity, 0, 0);
             }
         }
-        else
+        else if (InteractTimeTrialLever.lever2TimeTrialActive == false && CompleteTT2.completedTrial == false)
         {
             transform.position = originalPosition;
         }
