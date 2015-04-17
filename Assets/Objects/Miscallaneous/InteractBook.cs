@@ -7,13 +7,14 @@ using System.Collections;
 public class InteractBook : MonoBehaviour
 {
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
-    bool showBook1;
+    bool showBook1, showBook2;
 
     // Use this for initialization
     void Start()
     {
         rayLength = 1.5f;
         showBook1 = false;
+        showBook2 = false;
     }
 
     // Update is called once per frame
@@ -33,7 +34,12 @@ public class InteractBook : MonoBehaviour
                 if (hit.collider.tag == "Book1") //If the ray hit the object with label Book1
                 {
                     showBook1 = true; //Allow OnGUI function to display on screen
-                    Invoke("Hide", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                    Invoke("HideBook1", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
+                if (hit.collider.tag == "Book2") //If the ray hit the object with label Book2
+                {
+                    showBook2 = true; //Allow OnGUI function to display on screen
+                    Invoke("HideBook2", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
                 }
             }
         }
@@ -46,11 +52,21 @@ public class InteractBook : MonoBehaviour
         {
             GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Search the caves for keys and treasures!");
         }
+        if (showBook2)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Pull the lever and see what happens!");
+        }
     }
 
     //Set bool variable to false, so that text dissapears
-    void Hide()
+    void HideBook1()
     {
         showBook1 = false;
+    }
+
+    //Set bool variable to false, so that text dissapears
+    void HideBook2()
+    {
+        showBook2 = false;
     }
 }
