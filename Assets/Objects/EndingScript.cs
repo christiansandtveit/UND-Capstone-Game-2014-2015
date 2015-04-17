@@ -4,12 +4,12 @@ using System.Collections;
 public class EndingScript : MonoBehaviour {
 
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
-    bool showText;
+    bool showTextKey;
 
 	// Use this for initialization
 	void Start () {
         rayLength = 1.5f;
-        showText = false;
+        showTextKey = false;
 	}
 	
 	// Update is called once per frame
@@ -26,9 +26,13 @@ public class EndingScript : MonoBehaviour {
             {
                 if (hit.collider.tag == "Key1") //If the ray hit the object with label Lever1
                 {
-                    showText = true;
+                    showTextKey = true;
                     print("interactWithKey");
-                    Invoke("Teleport", 10.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                    Invoke("TeleportHub", 10.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
+                if (hit.collider.tag == "TeleportTime") //If the ray hit the object with label Lever1
+                {
+                    TeleportTime();
                 }
             }
         }
@@ -37,14 +41,19 @@ public class EndingScript : MonoBehaviour {
     //Display text to screen
     void OnGUI()
     {
-        if (showText == true)
+        if (showTextKey == true)
         {
             GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 100, 600, 600), "You have successfully collected the key in this level! Good job! You will now be teleported outside this level.");
         }
     }
 
-    void Teleport()
+    void TeleportHub()
     {
-        Application.LoadLevel("Hub");
+        Application.LoadLevel("level3Hub");
+    }
+
+    void TeleportTime()
+    {
+        Application.LoadLevel("TimeTrialLevel");
     }
 }
