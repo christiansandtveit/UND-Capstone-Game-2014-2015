@@ -71,6 +71,7 @@
      <Compile Include="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs" />
      <Compile Include="Assets\Objects\Bridge\Drawbridge.cs" />
      <Compile Include="Assets\Objects\DeathOnContact.cs" />
+     <Compile Include="Assets\Objects\EndingScript.cs" />
      <Compile Include="Assets\Objects\IResetable.cs" />
      <Compile Include="Assets\Objects\Interactable\Carriable\Carriable.cs" />
      <Compile Include="Assets\Objects\Interactable\Carriable\Rock\Rock.cs" />
@@ -83,6 +84,7 @@
      <Compile Include="Assets\Objects\Lever\LeverPuzzle\puzzleLever.cs" />
      <Compile Include="Assets\Objects\LeverSound.cs" />
      <Compile Include="Assets\Objects\LeverSound2.cs" />
+     <Compile Include="Assets\Objects\Miscallaneous\CompleteTT2.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\InteractBook.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\InteractTimeTrialLever.cs" />
      <Compile Include="Assets\Objects\Miscallaneous\MoveSpider.cs" />

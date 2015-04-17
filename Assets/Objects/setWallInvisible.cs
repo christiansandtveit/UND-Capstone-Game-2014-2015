@@ -7,7 +7,7 @@ using System.Collections;
 public class setWallInvisible : MonoBehaviour
 {
 
-    GameObject Wall1, Wall2, Wall3, Wall4, Wall5, Wall6, Wall7, Wall8, Wall9, Wall10, Wall11;
+    GameObject Wall1, Wall2, Wall3, Wall4, Wall5, Wall7, Wall8, Wall9, Wall10, Wall11;
 
     // Use this for initialization
     void Start()
@@ -27,9 +27,6 @@ public class setWallInvisible : MonoBehaviour
 
         Wall5 = transform.Find("Wall5").gameObject;
         Wall5.renderer.enabled = false;
-
-        Wall6 = transform.Find("Wall6").gameObject;
-        Wall6.renderer.enabled = false;
 
         Wall7 = transform.Find("Wall7").gameObject;
         Wall7.renderer.enabled = false;
