@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Objects\Miscallaneous\InteractBook.cs">
     <Files>
       <File FileName="UND-Capstone-Game-2014-2015.sln" Line="1" Column="1" />
-      <File FileName="Assets\Objects\Miscallaneous\InteractBook.cs" Line="27" Column="35" />
+      <File FileName="Assets\Objects\Miscallaneous\InteractBook.cs" Line="46" Column="6" />
       <File FileName="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs" Line="1" Column="1" />
       <File FileName="Assets\Objects\Lever\Lever.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\iceBlockPush.cs" Line="18" Column="1" />
+      <File FileName="Assets\Player\iceBlockPush.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
