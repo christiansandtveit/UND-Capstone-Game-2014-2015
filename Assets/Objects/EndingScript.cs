@@ -26,13 +26,39 @@ public class EndingScript : MonoBehaviour {
             {
                 if (hit.collider.tag == "Key1") //If the ray hit the object with label Lever1
                 {
+                    GameObject k1 = GameObject.FindWithTag("Key1");
+                    k1.renderer.enabled = false;
                     showTextKey = true;
                     print("interactWithKey");
-                    Invoke("TeleportHub", 10.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                    Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
+                if (hit.collider.tag == "Key2") //If the ray hit the object with label Lever1
+                {
+                    GameObject k2 = GameObject.FindWithTag("Key2");
+                    k2.renderer.enabled = false;
+                    showTextKey = true;
+                    print("interactWithKey");
+                    Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
+                if (hit.collider.tag == "Key3") //If the ray hit the object with label Lever1
+                {
+                    GameObject k3 = GameObject.FindWithTag("Key3");
+                    k3.renderer.enabled = false;
+                    showTextKey = true;
+                    print("interactWithKey");
+                    Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
                 }
                 if (hit.collider.tag == "TeleportTime") //If the ray hit the object with label Lever1
                 {
                     TeleportTime();
+                }
+                if (hit.collider.tag == "TeleportTele") //If the ray hit the object with label Lever1
+                {
+                    TeleportTele();
+                }
+                if (hit.collider.tag == "TeleportIce") //If the ray hit the object with label Lever1
+                {
+                    TeleportIce();
                 }
             }
         }
@@ -55,5 +81,15 @@ public class EndingScript : MonoBehaviour {
     void TeleportTime()
     {
         Application.LoadLevel("TimeTrialLevel");
+    }
+
+    void TeleportTele()
+    {
+        Application.LoadLevel("TeleportPuzzle");
+    }
+
+    void TeleportIce()
+    {
+        Application.LoadLevel("iceCave");
     }
 }

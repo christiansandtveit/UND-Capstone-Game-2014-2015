@@ -7,7 +7,7 @@ using System.Collections;
 public class InteractBook : MonoBehaviour
 {
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
-    bool showBook1, showBook2, showBook3;
+    bool showBook1, showBook2, showBook3, showBook4, showBook5;
 
     // Use this for initialization
     void Start()
@@ -16,6 +16,8 @@ public class InteractBook : MonoBehaviour
         showBook1 = false;
         showBook2 = false;
 		showBook3 = false;
+        showBook4 = false;
+        showBook5 = false;
     }
 
     // Update is called once per frame
@@ -47,6 +49,17 @@ public class InteractBook : MonoBehaviour
 					showBook3 = true; //Allow OnGUI function to display on screen
 					Invoke("HideBook3", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
 				}
+                if (hit.collider.tag == "Book4") //If the ray hit the object with label Book2
+                {
+                    showBook4 = true; //Allow OnGUI function to display on screen
+                    Invoke("HideBook4", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
+                if (hit.collider.tag == "Book5") //If the ray hit the object with label Book2
+                {
+                    print("B5");
+                    showBook5 = true; //Allow OnGUI function to display on screen
+                    Invoke("HideBook5", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
+                }
             }
         }
     }
@@ -66,6 +79,14 @@ public class InteractBook : MonoBehaviour
 		{
 			GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Find");
 		}
+        if (showBook4)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 400), "All you need is belief! Try walking to the door.");
+        }
+        if (showBook5)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 400), "Pick up a dart with E. Throw with left mouse");
+        }
     }
 
     //Set bool variable to false, so that text dissapears
@@ -85,4 +106,16 @@ public class InteractBook : MonoBehaviour
 	{
 		showBook3 = false;
 	}
+
+    //Set bool variable to false, so that text dissapears
+    void HideBook4()
+    {
+        showBook4 = false;
+    }
+
+    //Set bool variable to false, so that text dissapears
+    void HideBook5()
+    {
+        showBook5 = false;
+    }
 }
