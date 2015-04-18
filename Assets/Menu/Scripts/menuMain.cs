@@ -165,9 +165,9 @@ public class menuMain : MonoBehaviour {
 		if (GUILayout.Button("Level 2")) {
 			Application.LoadLevel ("Transition");
 		}
-        if (GUILayout.Button("Hub"))
+        if (GUILayout.Button("Level 3"))
         {
-            Application.LoadLevel("Hub");
+            Application.LoadLevel("level3Hub");
         }
         if (GUILayout.Button("Ice Cave"))
         {

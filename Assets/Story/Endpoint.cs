@@ -17,7 +17,7 @@ public class Endpoint : MonoBehaviour {
 			}
 			else if (currentLevel == 2) {
 				menuMain.time2 = FindObjectOfType<guiTime> ().Get ();
-				Application.LoadLevel ("Ending");
+				Application.LoadLevel ("level3Hub");
 			}
 		}
 	}

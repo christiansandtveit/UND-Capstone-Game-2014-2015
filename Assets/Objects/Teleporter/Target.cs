@@ -34,7 +34,7 @@ public class Target : AbstractResetable
                 }
             }
             targetLocation.z = originalLoc.z - heightToLower;
-            audio.Play();
+            //audio.Play();
         }
         isTriggered = true;
     }
