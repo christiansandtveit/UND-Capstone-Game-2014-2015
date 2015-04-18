@@ -99,6 +99,7 @@
      <Compile Include="Assets\Objects\Teleporter\ThrowingDart.cs" />
      <Compile Include="Assets\Objects\TimeTrialVisibility.cs" />
      <Compile Include="Assets\Objects\TimeTrialVisibility2.cs" />
+     <Compile Include="Assets\Objects\removeBounce.cs" />
      <Compile Include="Assets\Objects\setWallInvisible.cs" />
      <Compile Include="Assets\Player\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Player\Scripts\Crouch.cs" />

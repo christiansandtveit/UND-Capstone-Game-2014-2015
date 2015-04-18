@@ -27,28 +27,28 @@ public class pushBox : MonoBehaviour {
 				if (hit.collider.tag == "right") //If the ray hit the object with label box
 				{
 					Rigidbody body = hit.collider.attachedRigidbody;//get object hit by ray
-					
+					body.rigidbody.isKinematic = false;
 					Vector3 pushDir = new Vector3(0,0,1);
 					body.velocity =  pushDir* pushPower; //apply velocity to object
 				}
 				if (hit.collider.tag == "left") //If the ray hit the object with label box
 				{
 					Rigidbody body = hit.collider.attachedRigidbody;//get object hit by ray
-					
+					body.rigidbody.isKinematic = false;
 					Vector3 pushDir = new Vector3(0,0,-1);
 					body.velocity =  pushDir* pushPower; //apply velocity to object
 				}
 				if (hit.collider.tag == "up") //If the ray hit the object with label box
 				{
 					Rigidbody body = hit.collider.attachedRigidbody;//get object hit by ray
-					
+					body.rigidbody.isKinematic = false;
 					Vector3 pushDir = new Vector3(-1,0,0);
 					body.velocity =  pushDir* pushPower; //apply velocity to object
 				}
 				if (hit.collider.tag == "down") //If the ray hit the object with label box
 				{
 					Rigidbody body = hit.collider.attachedRigidbody;//get object hit by ray
-					
+					body.rigidbody.isKinematic = false;
 					Vector3 pushDir = new Vector3(1,0,0);
 					body.velocity =  pushDir* pushPower; //apply velocity to object
 				}
