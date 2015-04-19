@@ -2,10 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Objects\Miscallaneous\InteractBook.cs">
     <Files>
+      <File FileName="Assets\Objects\Miscallaneous\InteractBook.cs" Line="87" Column="85" />
+      <File FileName="Assets\Objects\removeBounce.cs" Line="1" Column="1" />
       <File FileName="Assets\Objects\Lever\Lever.cs" Line="1" Column="1" />
-      <File FileName="Assets\Objects\ice cave\iceBlockReset.cs" Line="21" Column="1" />
-      <File FileName="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs" Line="41" Column="10" />
-      <File FileName="Assets\Objects\Miscallaneous\InteractBook.cs" Line="68" Column="67" />
+      <File FileName="Assets\Objects\ice cave\iceBlockReset.cs" Line="1" Column="1" />
+      <File FileName="Assets\Objects\Activatable\SlidingDoor\SlidingDoor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Objects\Miscallaneous\InteractBook.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
