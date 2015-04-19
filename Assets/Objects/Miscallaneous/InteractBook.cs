@@ -7,7 +7,7 @@ using System.Collections;
 public class InteractBook : MonoBehaviour
 {
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
-    bool showBook1, showBook2, showBook3, showBook4, showBook5;
+    bool showBook1, showBook2, showBook3, showBook4, showBook5,showBook6;
 
     // Use this for initialization
     void Start()
@@ -18,6 +18,7 @@ public class InteractBook : MonoBehaviour
 		showBook3 = false;
         showBook4 = false;
         showBook5 = false;
+		showBook6 = false;
     }
 
     // Update is called once per frame
@@ -60,6 +61,12 @@ public class InteractBook : MonoBehaviour
                     showBook5 = true; //Allow OnGUI function to display on screen
                     Invoke("HideBook5", 3.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
                 }
+				if (hit.collider.tag == "Book6") //If the ray hit the object with label Book2
+				{
+					print("B6");
+					showBook6 = true; //Allow OnGUI function to display on screen
+					Invoke("HideBook6", 5.0F); //Invoke the Hide function after 5seconds, makes the text dissapear
+				}
             }
         }
     }
@@ -87,6 +94,10 @@ public class InteractBook : MonoBehaviour
         {
             GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 400), "Pick up a dart with E. Throw with left mouse");
         }
+		if (showBook6)
+		{
+			GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 100, 400, 400), "Push the ice block by clicking E. Reset the ice block by clicking R.");
+		}
     }
 
     //Set bool variable to false, so that text dissapears
@@ -118,4 +129,9 @@ public class InteractBook : MonoBehaviour
     {
         showBook5 = false;
     }
+	//Set bool variable to false, so that text dissapears
+	void HideBook6()
+	{
+		showBook6 = false;
+	}
 }
