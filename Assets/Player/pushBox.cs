@@ -4,7 +4,7 @@ using System.Collections;
 public class pushBox : MonoBehaviour {
 	
 	public float rayLength; //Length of ray, i.e. how far away player can interact with box
-	public float pushPower = 1.5F;
+	public float pushPower = 4F;
 	
 	// Use this for initialization
 	void Start () {
