@@ -127,8 +127,12 @@
      <Compile Include="Assets\Story\Scripts\transitionStory.cs" />
      <Compile Include="Assets\Torches\Torch.cs" />
      <None Include="Assets\Forest Grounds - Terrain Texture Pack\Readme.txt" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\sky5X\README.txt" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>F:/Users/Erik/Documents/GitHub/UND-Capstone-Game-2014-2015/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
