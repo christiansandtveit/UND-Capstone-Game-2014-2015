@@ -52,17 +52,12 @@ public class InteractTimeTrialLever : MonoBehaviour
             }
         }
 
-        if (DeathOnContact.playerDead == true && lever1TimeTrialActive == true)
+        if (DeathManagerTimeTrial.dead == true && lever1TimeTrialActive == true)
         {
             lever1TimeTrialActive = false;
             CancelInvoke("DeactivateLever1");
         }
-        if (DeathOnContact.playerDeadR == true && lever2TimeTrialActive == true)
-        {
-            lever2TimeTrialActive = false;
-            CancelInvoke("DeactivateLever2");
-        }
-        if (DeathOnContact.playerDeadL == true && lever2TimeTrialActive == true)
+        if (DeathManagerTimeTrial.dead == true && lever2TimeTrialActive == true)
         {
             lever2TimeTrialActive = false;
             CancelInvoke("DeactivateLever2");

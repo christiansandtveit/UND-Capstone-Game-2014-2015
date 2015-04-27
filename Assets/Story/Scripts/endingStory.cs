@@ -10,10 +10,8 @@ public class endingStory : MonoBehaviour {
 
 	void Start () {
 		Time.timeScale = 1;
-		AudioListener.pause = false;
 		endStill = Resources.Load ("EndingStill") as Texture;;
 		beginTime = Time.time;
-		audio.Play ();
 	}
 	
 	void LateUpdate () {

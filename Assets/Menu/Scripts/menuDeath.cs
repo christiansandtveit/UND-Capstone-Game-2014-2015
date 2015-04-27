@@ -101,6 +101,7 @@ public class menuDeath : MonoBehaviour {
 	
 	void StartDeath() {
 		isDead = true;
+        DeathManagerTimeTrial.dead = true;
 		AudioListener.pause = true;
 		GetComponent<guiHealth> ().Decrease ();
 		GetComponent<menuPause> ().PauseGame (false);
@@ -112,6 +113,7 @@ public class menuDeath : MonoBehaviour {
 		FindObjectOfType<Manager>().Reset();
 		FindObjectOfType<LevelManager>().Reset ();
 		isDead = false;
+        DeathManagerTimeTrial.dead = false;
 		AudioListener.pause = false;
 		GetComponent<guiPrompt> ().Reset ();
 		GetComponent<menuPause> ().enabled = true;
