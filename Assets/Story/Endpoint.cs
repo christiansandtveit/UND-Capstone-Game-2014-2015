@@ -19,6 +19,14 @@ public class Endpoint : MonoBehaviour {
 				menuMain.time2 = FindObjectOfType<guiTime> ().Get ();
 				Application.LoadLevel ("level3Hub");
 			}
+            else if (currentLevel == 13)
+            {
+                KeyManager.timeKeyCollected = false;
+                KeyManager.teleKeyCollected = false;
+                KeyManager.iceKeyCollected = false;
+                menuMain.time2 = FindObjectOfType<guiTime>().Get();
+                Application.LoadLevel("Ending");
+            }
 		}
 	}
 }
