@@ -12,7 +12,7 @@ public class MoveWalls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         originalPosition = transform.position;
-        velocity = 0.007f;
+        velocity = 0.45f;
 	}
 	
 	// Update is called once per frame
@@ -21,11 +21,11 @@ public class MoveWalls : MonoBehaviour {
         {
             if (gameObject.name == "Left")
             {
-                transform.position -= new Vector3(velocity, 0, 0);
+                transform.position -= new Vector3(velocity * Time.deltaTime, 0, 0);
             }
             else if (gameObject.name == "Right")
             {
-                transform.position += new Vector3(velocity, 0, 0);
+                transform.position += new Vector3(velocity * Time.deltaTime, 0, 0);
             }
         }
         else if (InteractTimeTrialLever.lever2TimeTrialActive == false && CompleteTT2.completedTrial == false)

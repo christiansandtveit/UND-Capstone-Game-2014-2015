@@ -5,11 +5,16 @@ public class EndingScript : MonoBehaviour {
 
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
     bool showTextKey;
+    //public static bool timeKeyCollected, teleKeyCollected, iceKeyCollected;
+    
 
 	// Use this for initialization
 	void Start () {
         rayLength = 1.5f;
         showTextKey = false;
+        //timeKeyCollected = false;
+        //teleKeyCollected = false;
+        //iceKeyCollected = false;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +33,7 @@ public class EndingScript : MonoBehaviour {
                 {
                     GameObject k1 = GameObject.FindWithTag("Key1");
                     k1.renderer.enabled = false;
+                    KeyManager.timeKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");
                     Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
@@ -36,6 +42,7 @@ public class EndingScript : MonoBehaviour {
                 {
                     GameObject k2 = GameObject.FindWithTag("Key2");
                     k2.renderer.enabled = false;
+                    KeyManager.teleKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");
                     Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
@@ -44,6 +51,7 @@ public class EndingScript : MonoBehaviour {
                 {
                     GameObject k3 = GameObject.FindWithTag("Key3");
                     k3.renderer.enabled = false;
+                    KeyManager.iceKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");
                     Invoke("TeleportHub", 5.0F); //Invoke the Hide function after 3seconds, makes the text dissapear
@@ -73,6 +81,7 @@ public class EndingScript : MonoBehaviour {
         }
     }
 
+    /*Teleport scripts */
     void TeleportHub()
     {
         Application.LoadLevel("level3Hub");

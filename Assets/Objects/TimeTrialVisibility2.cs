@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Christian Oliver Sandtveit
+//Script used to determine whther the blocakges for the 2nd puzzle in the timetrial level should be visible or not */
+
+using UnityEngine;
 using System.Collections;
 
 public class TimeTrialVisibility2 : MonoBehaviour {
@@ -13,7 +16,6 @@ public class TimeTrialVisibility2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /* WORK IN PROGRESS */
         if (InteractTimeTrialLever.lever2TimeTrialActive == true)
         {
             b1.SetActive(false);

@@ -14,7 +14,10 @@ public class iceBlockReset : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.R)) 
 		{
-			iceBlock.transform.position = new Vector3 (37, -2, -6);
+			float x = 37.08F;
+			float y = -2.1954F;
+			float z = -6F;
+			iceBlock.transform.position = new Vector3 (x, y, z);
 		}
 	}
 }

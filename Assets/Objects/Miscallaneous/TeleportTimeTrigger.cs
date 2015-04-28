@@ -17,8 +17,10 @@ public class TeleportTimeTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        /*player entered the trigger point */
         if (other.gameObject.tag == "Player")
         {
+            /*show hint */
             showHint = true;
             Invoke("HideHint", 5.0F);
         }

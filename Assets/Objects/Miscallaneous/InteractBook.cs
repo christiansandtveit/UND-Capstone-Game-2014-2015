@@ -84,7 +84,7 @@ public class InteractBook : MonoBehaviour
         }
 		if (showBook3)
 		{
-			GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Find");
+			GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Find the keys to unlock the gate.");
 		}
         if (showBook4)
         {
