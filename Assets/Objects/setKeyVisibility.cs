@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿//Christian Oliver Sandtveit
+//Script used to set the keys visibility in the hub world according to whether the key hasb een collected or not
+
+using UnityEngine;
 using System.Collections;
 
 public class setKeyVisibility : MonoBehaviour {
 
-    GameObject keyTime, keyTele, keyIce;
+    GameObject keyTime, keyTele, keyIce; /* varaibles for the gameobjects */
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,7 @@ public class setKeyVisibility : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /* If the static variable indicates the key has been collected, set renderer to true */
         if (KeyManager.timeKeyCollected == true)
         {
             keyTime.renderer.enabled = true;

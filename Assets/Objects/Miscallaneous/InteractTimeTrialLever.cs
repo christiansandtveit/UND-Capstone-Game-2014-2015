@@ -12,11 +12,14 @@ public class InteractTimeTrialLever : MonoBehaviour
     public float rayLength; //Length of ray, i.e. how far away player can interact with book
     public static bool lever1TimeTrialActive; //Static variable, will be accessed in other scripts
     public static bool lever2TimeTrialActive; //Static variable, will be accessed in other scripts
+    GameObject lever1, lever2;
 
 
     // Use this for initialization
     void Start()
     {
+        lever1 = GameObject.FindWithTag("CylinderLever1");
+        lever2 = GameObject.FindWithTag("CylinderLever2");
         lever1ActiveLength = 10.0f;
         lever2ActiveLength = 20.0f;
         rayLength = 1.5f;
@@ -40,12 +43,14 @@ public class InteractTimeTrialLever : MonoBehaviour
                 if (hit.collider.tag == "Lever1") //If the ray hit the object with label Lever1
                 {
                     lever1TimeTrialActive = true; //set boolean to true
+                    lever1.animation.Play("leverPull"); //Play animation
                     Invoke("DeactivateLever1", lever1ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever1");
                 }
                 if (hit.collider.tag == "Lever2") //If the ray hit the object with label Lever2
                 {
                     lever2TimeTrialActive = true; //set boolean to true
+                    lever2.animation.Play("leverPull2"); //Play animation
                     Invoke("DeactivateLever2", lever2ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever2");
                 }

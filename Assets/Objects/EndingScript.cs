@@ -81,6 +81,7 @@ public class EndingScript : MonoBehaviour {
         }
     }
 
+    /*Teleport scripts */
     void TeleportHub()
     {
         Application.LoadLevel("level3Hub");
