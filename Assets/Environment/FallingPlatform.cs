@@ -7,6 +7,7 @@ public class FallingPlatform : AbstractResetable {
 
 	public float fallTimeDelay = 2.0f;
 	public float fallDistance = 150.0f;
+	public float fallRespawnDelay = 15.0f; //seconds before the platform will respawn after falling
 	private float finalHeight;
 	private Vector3 originalLoc;
 
@@ -41,6 +42,12 @@ public class FallingPlatform : AbstractResetable {
 		}
 		rigidbody.isKinematic = true;
 		rigidbody.useGravity = false;
+		//respawn code
+		yield return new WaitForSeconds(fallTimeDelay);
+		this.transform.position = originalLoc;
+		rigidbody.isKinematic = true;
+		rigidbody.useGravity = false;
+		//end of respawn code
 	}
 
 	public override void Reset()
