@@ -14,33 +14,33 @@ public class setWallInvisible : MonoBehaviour
     {
         //Find the objects and sett renderer to inactive
         Wall1 = transform.Find("Wall1").gameObject;
-        Wall1.renderer.enabled = false;
+        Wall1.GetComponent<Renderer>().enabled = false;
 
         Wall2 = transform.Find("Wall2").gameObject;
-        Wall2.renderer.enabled = false;
+        Wall2.GetComponent<Renderer>().enabled = false;
 
         Wall3 = transform.Find("Wall3").gameObject;
-        Wall3.renderer.enabled = false;
+        Wall3.GetComponent<Renderer>().enabled = false;
 
         Wall4 = transform.Find("Wall4").gameObject;
-        Wall4.renderer.enabled = false;
+        Wall4.GetComponent<Renderer>().enabled = false;
 
         Wall5 = transform.Find("Wall5").gameObject;
-        Wall5.renderer.enabled = false;
+        Wall5.GetComponent<Renderer>().enabled = false;
 
         Wall7 = transform.Find("Wall7").gameObject;
-        Wall7.renderer.enabled = false;
+        Wall7.GetComponent<Renderer>().enabled = false;
 
         Wall8 = transform.Find("Wall8").gameObject;
-        Wall8.renderer.enabled = false;
+        Wall8.GetComponent<Renderer>().enabled = false;
 
         Wall9 = transform.Find("Wall9").gameObject;
-        Wall9.renderer.enabled = false;
+        Wall9.GetComponent<Renderer>().enabled = false;
 
         Wall10 = transform.Find("Wall10").gameObject;
-        Wall10.renderer.enabled = false;
+        Wall10.GetComponent<Renderer>().enabled = false;
 
         Wall11 = transform.Find("Wall11").gameObject;
-        Wall11.renderer.enabled = false;
+        Wall11.GetComponent<Renderer>().enabled = false;
     }
 }

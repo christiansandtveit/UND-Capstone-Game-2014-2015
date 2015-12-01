@@ -22,9 +22,9 @@ public class RaisingPlatform : Activatable {
 
 	public override void Activate ()
 	{
-		audio.Stop ();
+		GetComponent<AudioSource>().Stop ();
 		targetLocation.y = originalLoc.y + heightToRaise;
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 	}
 	public override void Deactivate ()
 	{
@@ -69,7 +69,7 @@ public class RaisingPlatform : Activatable {
 		}
 		if (this.transform.position.y == targetLocation.y || this.transform.position.y == originalLoc.y)
 		{
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 		}
 	}
 	public override void Reset() 

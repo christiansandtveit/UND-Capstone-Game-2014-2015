@@ -6,8 +6,8 @@ using System.Collections;
 public class Rock : Carriable {
 	
 	void OnCollisionEnter(Collision col) {
-		if (!audio.isPlaying) {
-			audio.Play ();
+		if (!GetComponent<AudioSource>().isPlaying) {
+			GetComponent<AudioSource>().Play ();
 		}
 	}
 }

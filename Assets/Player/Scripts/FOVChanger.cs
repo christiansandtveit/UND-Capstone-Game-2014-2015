@@ -19,11 +19,11 @@ public class FOVChanger : MonoBehaviour {
     {
         if (characterMotor.IsSprinting())
         {
-            camera.fieldOfView = Mathf.Min (camera.fieldOfView + changeSpeed * Time.deltaTime, sprintingFOV);
+            GetComponent<Camera>().fieldOfView = Mathf.Min (GetComponent<Camera>().fieldOfView + changeSpeed * Time.deltaTime, sprintingFOV);
         }
         else
         {
-            camera.fieldOfView = Mathf.Max (camera.fieldOfView - changeSpeed * Time.deltaTime, normalFOV);
+            GetComponent<Camera>().fieldOfView = Mathf.Max (GetComponent<Camera>().fieldOfView - changeSpeed * Time.deltaTime, normalFOV);
         }
     }
 

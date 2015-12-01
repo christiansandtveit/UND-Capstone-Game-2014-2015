@@ -35,14 +35,14 @@ public class Torch : Activatable {
 	{
 		if (isActive == true)
 		{
-			if (audio.isPlaying == false)
+			if (GetComponent<AudioSource>().isPlaying == false)
 			{
-				audio.Play ();
+				GetComponent<AudioSource>().Play ();
 			}
 		} 
 		else
 		{
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 		}
 	}
 	

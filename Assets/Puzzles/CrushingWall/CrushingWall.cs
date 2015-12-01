@@ -37,7 +37,7 @@ public class CrushingWall : Activatable {
         if(this.transform.position.z <= targetLocation.z)
         {
             isDoneMoving = true;
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
         }
 	}
 
@@ -61,7 +61,7 @@ public class CrushingWall : Activatable {
 
     IEnumerator StartSlide()
     {
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
         yield return new WaitForSeconds(startDelay);
         targetLocation.z -= totalDistanceToMove;
     }

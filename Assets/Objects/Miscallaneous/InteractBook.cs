@@ -29,7 +29,7 @@ public class InteractBook : MonoBehaviour
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
-        Ray ray = camera.ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
 
         if (Input.GetButton("Interact")) //If interact button is pressed, a ray will be sent out
         {

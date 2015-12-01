@@ -28,7 +28,7 @@ public class PressureSwitch : AbstractResetable
 				}
 			}
 			targetLocation.y = originalLoc.y - heightToLower;
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 		}
 		isTriggered = true;
 	}

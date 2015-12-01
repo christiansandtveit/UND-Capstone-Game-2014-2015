@@ -34,7 +34,7 @@ public class InteractTimeTrialLever : MonoBehaviour
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
-        Ray ray = camera.ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
 
         if (Input.GetButton("Interact")) //If interact button is pressed, a ray will be sent out
         {
@@ -43,14 +43,14 @@ public class InteractTimeTrialLever : MonoBehaviour
                 if (hit.collider.tag == "Lever1") //If the ray hit the object with label Lever1
                 {
                     lever1TimeTrialActive = true; //set boolean to true
-                    lever1.animation.Play("leverPull"); //Play animation
+                    lever1.GetComponent<Animation>().Play("leverPull"); //Play animation
                     Invoke("DeactivateLever1", lever1ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever1");
                 }
                 if (hit.collider.tag == "Lever2") //If the ray hit the object with label Lever2
                 {
                     lever2TimeTrialActive = true; //set boolean to true
-                    lever2.animation.Play("leverPull2"); //Play animation
+                    lever2.GetComponent<Animation>().Play("leverPull2"); //Play animation
                     Invoke("DeactivateLever2", lever2ActiveLength); //Invoke the Hide function after 5seconds, makes floating pieces dissapear
                     print("Lever2");
                 }

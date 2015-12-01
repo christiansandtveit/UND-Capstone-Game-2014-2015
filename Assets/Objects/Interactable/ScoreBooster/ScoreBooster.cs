@@ -16,7 +16,7 @@ public class ScoreBooster : Interactable {
 	public override void Interact (Transform interactor)
 	{
 		scoreKeeper.Increase(value);
-		AudioSource.PlayClipAtPoint (audio.clip, transform.position, 0.25f);
+		AudioSource.PlayClipAtPoint (GetComponent<AudioSource>().clip, transform.position, 0.25f);
 		GameObject.Destroy(this.gameObject);
 	}
 }

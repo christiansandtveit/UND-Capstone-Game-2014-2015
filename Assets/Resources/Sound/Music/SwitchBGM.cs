@@ -40,19 +40,19 @@ public class SwitchBGM : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		if (isColliding && audio.volume > .01) {
-			audio.volume -= fadeSpeed * Time.deltaTime;
+		if (isColliding && GetComponent<AudioSource>().volume > .01) {
+			GetComponent<AudioSource>().volume -= fadeSpeed * Time.deltaTime;
 		}
-		if (audio.volume <= .01 && !done) {
+		if (GetComponent<AudioSource>().volume <= .01 && !done) {
 			done = true;
 			isColliding = false;
-			audio.clip = inside ? insideClip : outsideClip;
-			audio.Play();
-			audio.loop  = true;
+			GetComponent<AudioSource>().clip = inside ? insideClip : outsideClip;
+			GetComponent<AudioSource>().Play();
+			GetComponent<AudioSource>().loop  = true;
 		}
 
-		if (audio.volume <= vol && !isColliding) {
-			audio.volume += fadeSpeed * Time.deltaTime;
+		if (GetComponent<AudioSource>().volume <= vol && !isColliding) {
+			GetComponent<AudioSource>().volume += fadeSpeed * Time.deltaTime;
 		}
 	}
 }

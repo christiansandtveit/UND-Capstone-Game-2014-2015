@@ -108,7 +108,7 @@ public class menuMain : MonoBehaviour {
 	private Page currentPage;
 
 	void Start () {
-		Screen.showCursor = true;
+		Cursor.visible = true;
 		score = "000000";
 		time1 = "00:00";
 		time2 = "00:00";

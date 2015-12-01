@@ -14,33 +14,33 @@ public abstract class Carriable : Interactable {
         {
             Destroy(joint);
             isBeingCarried = false;
-            rigidbody.constraints = RigidbodyConstraints.None;
-            collider.isTrigger = false;
-            rigidbody.AddForce(Camera.main.transform.forward * 20, ForceMode.Impulse);
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<Collider>().isTrigger = false;
+            GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 20, ForceMode.Impulse);
         }
     }
 	public override void Interact(Transform interactor)
 	{
 		if (!isBeingCarried)
 		{
-			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 			joint = gameObject.AddComponent<SpringJoint>();
 			joint.autoConfigureConnectedAnchor = false;
-			joint.connectedBody = interactor.rigidbody;
+			joint.connectedBody = interactor.GetComponent<Rigidbody>();
 			joint.anchor = Vector3.zero;
 			joint.connectedAnchor = Vector3.zero;
 			joint.spring = 10000;
 			joint.damper = 0;
 			joint.maxDistance = 0;
 			isBeingCarried = true;
-			collider.isTrigger = true;
+			GetComponent<Collider>().isTrigger = true;
 		}
 		else
 		{
 			Destroy(joint);
 			isBeingCarried = false;
-			rigidbody.constraints = RigidbodyConstraints.None;
-			collider.isTrigger = false;
+			GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+			GetComponent<Collider>().isTrigger = false;
 		}
 	}
 }

@@ -16,7 +16,7 @@ public class ArrowTrap : Activatable {
 	{
 		if (arrowParticles != null && !arrowParticles.isPlaying)
 		{
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 			arrowParticles.Play();
 			Destroy(arrowParticles, arrowParticles.duration);
 		}
