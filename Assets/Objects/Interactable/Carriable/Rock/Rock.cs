@@ -20,6 +20,7 @@ public class Rock : Carriable {
         {
             rockBoddy.velocity = new Vector3(0, 0);
         }
+
     }
 
 }
