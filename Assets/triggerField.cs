@@ -1,16 +1,19 @@
-﻿using UnityEngine;
+﻿//made by matthew nelson
+using UnityEngine;
 using System.Collections;
+
 public class triggerField : MonoBehaviour {
-    public Activatable[] thingsToActivate;
-    public Activatable[] thingsToDeactivate;
-    public bool isOneTimeTrigger = false;   
-    private bool isTriggered = false;      
-    private short triggeringObjectCount;
+    public Activatable[] thingsToActivate;//list of things to activate when the field is activated
+    public Activatable[] thingsToDeactivate;//list of thngs to deactivate when the field is activated
+    public bool isOneTimeTrigger = false;//if this field can only be triggered once   
+    private bool isTriggered = false;//if the field has been triggered
+    private short triggeringObjectCount;//how many times the field has been triggered used for debugging 
 
 
     private void Trigger()
     {
         triggeringObjectCount++;
+        Debug.Log("trigger field" + triggeringObjectCount);
         if (!isTriggered)
         {
             for (int i = 0; i < thingsToActivate.Length; i++)
@@ -43,7 +46,7 @@ public class triggerField : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        Trigger();
+        //Trigger();
     }
 
     void OnTriggerEnter(Collider other)

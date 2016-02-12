@@ -14,10 +14,10 @@ public class MoveSpider : MonoBehaviour {
     float i = 0; //variable i is used to implement the intervals
     public float velocity = 0.005f; //Speed the spider is moving in
     int interval;
-    public float orientationChange = 0; //Since the psider is moving in a square, rotate 90 degrees when changing directions
+    float orientationChange = 0; //an verible of the current rotation amount 
     public float orientationIncremant = 5;//amount to turn by
-    public int randomLow = 100;
-    public int randomHigh = 300;
+    public int randomLow = 100; //the low end of the size of the randonly sized box the spider goes around
+    public int randomHigh = 300; //the high end of the size of the randonly sized box the spider goes around
     float iIncrement;
     float yAngle;
 
@@ -26,6 +26,10 @@ public class MoveSpider : MonoBehaviour {
         yAngle = transform.eulerAngles.y; //Get the current roatation on the y axis
         /* Getting a random interval. The interval determines how far the object will move in one direction
            before changine directions */
+        if(randomLow >= randomHigh)//set the random number to 1-random high if low is bigger or equal to high
+        {
+            randomLow = randomHigh - 1;
+        }
         interval = Random.Range(randomLow, randomHigh);
         iIncrement = (velocity * 1000) / 5;
         if(iIncrement > 1)
@@ -36,28 +40,20 @@ public class MoveSpider : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /* Depending on the degree the spider is rotated in, the movement and rotations will vary. The if statements checks the default
-           rotation, and then starts the script accordingly. As of now, the spider must be placed in a manner where its rotation on the y axis 
-           is either 0, 90. 180 or 270 degrees. In other words, on all walls in a room if it have default placement on the axis'. It then uses
-           the transform, which all objects has, to correctly rotate the object and move the object along the appropraite axis. 
-           transform.eulerAngles changes the orientation of the spider, and transform.position the position of the spider.*/
-           /**Update:
-           the spider now rotates slitly tell it gets to the designated 0,90,180 or 270 degree turns
-            */
-        //if((int)yAngle == 90)
-        if((int)yAngle >= 90 && (int)yAngle < 180)
+        //this if handles the spider if the spider had a starting angle between 45 and 135
+        if ((int)yAngle >= 45  && (int)yAngle < 135)
         {
             if (i >= 0 && i < interval)
             {
                 transform.position += new Vector3(0, velocity, 0);
-                if ((int)i == interval - 1)
+                if ((int)i == interval - 1)//if it is time to start turning
                 {
-                    orientationChange = orientationChange + orientationIncremant;
-                    if(orientationChange < 90)
+                    orientationChange = orientationChange + orientationIncremant;//increase the angle when turning
+                    if(orientationChange < 90) //if turn is complete yet
                     {
                         transform.eulerAngles = new Vector3(0, yAngle, orientationChange);
                     }
-                    else
+                    else //end turning motion
                     {
                         orientationChange = 90;
                         transform.eulerAngles = new Vector3(0, yAngle, orientationChange);
@@ -65,20 +61,13 @@ public class MoveSpider : MonoBehaviour {
                     }
                     
                 }
-                else
+                else//more forward if not turnning 
                 {
                     i = i + iIncrement;
                 }
             }
             else if (i >= interval && i < interval * 2)
             {
-                /*
-                transform.position += new Vector3(0, 0, velocity);
-                if (i == (interval * 2) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 2);
-                    i++;
-                }*/
                 transform.position += new Vector3(0, 0, velocity);
                 if ((int)i == (interval * 2) - 1)
                 {
@@ -101,13 +90,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 2 && i < interval * 3)
-            {/*
-                transform.position += new Vector3(0, -velocity, 0);
-                if (i == (interval * 3) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 3);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, -velocity, 0);
                 if ((int)i == (interval * 3) - 1)
                 {
@@ -130,14 +113,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 3 && i < interval * 4)
-            {/*
-                transform.position += new Vector3(0, 0, -velocity);
-                if (i == (interval * 4) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 4);
-                    i++;
-                    i = 0;
-                }*/
+            {
                 transform.position += new Vector3(0, 0, -velocity);
                 if ((int)i == (interval * 4) - 1)
                 {
@@ -161,17 +137,11 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
         }
-        //else if ((int)yAngle == 270)
-        else if((int)yAngle >= 270 && (int)yAngle < 360)
+        //this if handles the spider if the spider had a starting angle between 225 and 315
+        else if ((int)yAngle >= 225 && (int)yAngle < 315)
         {
             if (i >= 0 && i < interval)
-            {/*
-                transform.position += new Vector3(0, velocity, 0);
-                if (i == interval - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 3);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, velocity, 0);
                 if ((int)i == (interval * 1) - 1)
                 {
@@ -194,13 +164,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval && i < interval * 2)
-            {/*
-                transform.position += new Vector3(0, 0, velocity);
-                if (i == (interval * 2) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 2);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, 0,velocity);
                 if ((int)i == (interval * 2) - 1)
                 {
@@ -223,13 +187,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 2 && i < interval * 3)
-            {/*
-                transform.position += new Vector3(0, -velocity, 0);
-                if (i == (interval * 3) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 1);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, -velocity, 0);
                 if ((int)i == (interval * 3) - 1)
                 {
@@ -253,14 +211,6 @@ public class MoveSpider : MonoBehaviour {
             }
             else if (i >= interval * 3 && i < interval * 4)
             {
-                /*
-                transform.position += new Vector3(0, 0, -velocity);
-                if (i == (interval * 4) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 4);
-                    i = 0;
-                    i++;
-                }*/
                 transform.position += new Vector3(0, 0, -velocity);
                 if ((int)i == (interval * 4) - 1)
                 {
@@ -284,17 +234,11 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
         }
-        //else if ((int)yAngle == 0)
-        else if((int)yAngle >= 0 && (int)yAngle < 90)
+        //this if handles the spider if the spider had a starting angle is greater then 315 or less then 45
+        else if ((int)yAngle >= 315 || (int)yAngle < 45)
         {
             if (i >= 0 && i < interval)
-            {/*
-                transform.position += new Vector3(0, velocity, 0);
-                if (i == interval - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 3);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, velocity, 0);
                 if ((int)i == (interval * 1) - 1)
                 {
@@ -317,13 +261,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval && i < interval * 2)
-            {/*
-                transform.position += new Vector3(velocity, 0, 0);
-                if (i == (interval * 2) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 2);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(velocity, 0,0);
                 if ((int)i == (interval * 2) - 1)
                 {
@@ -346,13 +284,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 2 && i < interval * 3)
-            {/*
-                transform.position += new Vector3(0, -velocity, 0);
-                if (i == (interval * 3) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 1);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, -velocity, 0);
                 if ((int)i == (interval * 3) - 1)
                 {
@@ -375,14 +307,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 3 && i < interval * 4)
-            {/*
-                transform.position += new Vector3(-velocity, 0, 0);
-                if (i == (interval * 4) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 4);
-                    i = 0;
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(-velocity, 0, 0);
                 if ((int)i == (interval * 4) - 1)
                 {
@@ -406,17 +331,11 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
         }
-        //else if ((int)yAngle == 180)
-        else if((int)yAngle <= 180 && (int)yAngle > 270)
+        //this if handles the spider if the spider had a starting angle between 135 and 225
+        else if((int)yAngle >= 135 && (int)yAngle < 225)
         {
             if ((int)i >= 0 && i < interval)
-            {/*
-                transform.position += new Vector3(0, velocity, 0);
-                if (i == interval - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 1);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, velocity, 0);
                 if ((int)i == (interval * 1) - 1)
                 {
@@ -439,13 +358,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval && i < interval * 2)
-            {/*
-                transform.position += new Vector3(velocity, 0, 0);
-                if (i == (interval * 2) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 2);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(velocity, 0,0);
                 if ((int)i == (interval * 2) - 1)
                 {
@@ -468,13 +381,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 2 && i < interval * 3)
-            {/*
-                transform.position += new Vector3(0, -velocity, 0);
-                if (i == (interval * 3) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 3);
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3(0, -velocity, 0);
                 if ((int)i == (interval * 3) - 1)
                 {
@@ -497,14 +404,7 @@ public class MoveSpider : MonoBehaviour {
                 }
             }
             else if (i >= interval * 3 && i < interval * 4)
-            {/*
-                transform.position += new Vector3(-velocity, 0, 0);
-                if (i == (interval * 4) - 1)
-                {
-                    transform.eulerAngles = new Vector3(0, yAngle, orientationChange * 4);
-                    i = 0;
-                    i++;
-                }*/
+            {
                 transform.position += new Vector3( -velocity, 0,0);
                 if ((int)i == (interval * 4) - 1)
                 {
