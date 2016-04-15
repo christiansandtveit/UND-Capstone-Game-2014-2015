@@ -23,7 +23,7 @@ public class introductionStory : MonoBehaviour {
 		beginTime = Time.time;
 		lastUpdate = Time.time;
 		stillIndex = 0;
-		audio.Play();
+		GetComponent<AudioSource>().Play();
 	}
 	
 	void LateUpdate () {

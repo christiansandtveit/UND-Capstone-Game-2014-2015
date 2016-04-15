@@ -12,11 +12,11 @@ public class setKeyVisibility : MonoBehaviour {
 	void Start () {
         //Find the objects and sett renderer to inactive
         keyTele = transform.Find("hubTeleKey").gameObject;
-        keyTele.renderer.enabled = false;
+        keyTele.GetComponent<Renderer>().enabled = false;
         keyTime = transform.Find("hubTimeKey").gameObject;
-        keyTime.renderer.enabled = false;
+        keyTime.GetComponent<Renderer>().enabled = false;
         keyIce = transform.Find("hubIceKey").gameObject;
-        keyIce.renderer.enabled = false;
+        keyIce.GetComponent<Renderer>().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -24,15 +24,15 @@ public class setKeyVisibility : MonoBehaviour {
         /* If the static variable indicates the key has been collected, set renderer to true */
         if (KeyManager.timeKeyCollected == true)
         {
-            keyTime.renderer.enabled = true;
+            keyTime.GetComponent<Renderer>().enabled = true;
         }
         if (KeyManager.teleKeyCollected == true)
         {
-            keyTele.renderer.enabled = true;
+            keyTele.GetComponent<Renderer>().enabled = true;
         }
         if (KeyManager.iceKeyCollected == true)
         {
-            keyIce.renderer.enabled = true;
+            keyIce.GetComponent<Renderer>().enabled = true;
         }
 	}
 }

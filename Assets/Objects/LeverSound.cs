@@ -18,12 +18,12 @@ public class LeverSound : MonoBehaviour {
         //Check Lever1 status
         if (InteractTimeTrialLever.lever1TimeTrialActive == true && playing == false)
         {
-            audio.Play();
+            GetComponent<AudioSource>().Play();
             playing = true;
         }
         else if (InteractTimeTrialLever.lever1TimeTrialActive == false && playing == true)
         {
-            audio.Stop();
+            GetComponent<AudioSource>().Stop();
             playing = false;
         }
 	}

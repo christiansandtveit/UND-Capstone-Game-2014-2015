@@ -53,7 +53,7 @@ public class HeadBob : MonoBehaviour
 			{
 				if(characterMotor.movement.velocity.magnitude != 0.0f)
 				{
-					audio.PlayOneShot (footSteps, 0.025f);
+					GetComponent<AudioSource>().PlayOneShot (footSteps, 0.025f);
 				}
 				timer -= Mathf.PI * 2;
 			}

@@ -1,6 +1,7 @@
 ﻿//Randall Howatt
 //CSci 448
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class menuMain : MonoBehaviour {
@@ -108,7 +109,7 @@ public class menuMain : MonoBehaviour {
 	private Page currentPage;
 
 	void Start () {
-		Screen.showCursor = true;
+		Cursor.visible = true;
 		score = "000000";
 		time1 = "00:00";
 		time2 = "00:00";
@@ -182,26 +183,30 @@ public class menuMain : MonoBehaviour {
 	void ShowLevels() {
 		BeginPage (200, 200);
 		if (GUILayout.Button ("Level 1")) {
-			Application.LoadLevel ("Introduction");
+            SceneManager.LoadScene("Introduction");
 		}
 		if (GUILayout.Button("Level 2")) {
-			Application.LoadLevel ("Transition");
+            SceneManager.LoadScene("Transition");
 		}
         if (GUILayout.Button("Level 3"))
         {
-            Application.LoadLevel("level3Hub");
+            SceneManager.LoadScene("level3Hub");
         }
         if (GUILayout.Button("Ice Cave"))
         {
-            Application.LoadLevel("iceCave");
+            SceneManager.LoadScene("iceCave");
         }
         if (GUILayout.Button("Time Trial Level"))
         {
-            Application.LoadLevel("TimeTrialLevel");
+            SceneManager.LoadScene("TimeTrialLevel");
         }
         if (GUILayout.Button("Teleporter Level"))
         {
-            Application.LoadLevel("TeleportPuzzle");
+            SceneManager.LoadScene("TeleportPuzzle");
+        }
+        if(GUILayout.Button("FallingLevel"))
+        {
+            SceneManager.LoadScene("FallingLevel");
         }
 		EndPage ();
 	}
@@ -247,7 +252,7 @@ public class menuMain : MonoBehaviour {
 	void MainMenu() {
 		BeginPage(200,200);
 		if (GUILayout.Button ("Start Game")) {
-			Application.LoadLevel ("Introduction"); 
+            SceneManager.LoadScene("Introduction"); 
 		}
 		if (GUILayout.Button ("Level Select")) {
 			currentPage = Page.Levels;

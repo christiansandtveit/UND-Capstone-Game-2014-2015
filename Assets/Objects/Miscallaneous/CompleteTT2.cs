@@ -13,7 +13,7 @@ public class CompleteTT2 : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        renderer.enabled = false;
+        GetComponent<Renderer>().enabled = false;
         completedTrial = false;
     }
 

@@ -18,7 +18,7 @@ public class ScoreBoard : MonoBehaviour {
 
 	void Start () {
 		Time.timeScale = 1;
-		Screen.showCursor = true;
+		Cursor.visible = true;
 		blackScreen = Resources.Load ("BlackScreen") as Texture;
 		score = menuMain.score;
 		time1 = menuMain.time1;

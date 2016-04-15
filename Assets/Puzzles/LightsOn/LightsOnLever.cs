@@ -31,6 +31,6 @@ public class LightsOnLever : Interactable {
 		{
 			myTorch.Activate();
 		}
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 	}
 }

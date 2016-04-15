@@ -19,7 +19,7 @@ public class StairPuzzleSwitch : MonoBehaviour
 		triggeringObjectCount++;
 		if (!isTriggered)
         {
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
             targetLocation.y = originalLoc.y - heightToLower;
 		}
 		isTriggered = true;

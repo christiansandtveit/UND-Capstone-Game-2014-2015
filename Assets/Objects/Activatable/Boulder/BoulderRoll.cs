@@ -22,19 +22,19 @@ public class BoulderRoll : Activatable {
 	{
         gameObject.AddComponent<DeathOnContact>();
 		StartCoroutine("Roll");
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 	}
 
 	public override void Deactivate (){}
 
 	IEnumerator Roll()
 	{
-		rigidbody.angularVelocity = this.angularVelocity;
+		GetComponent<Rigidbody>().angularVelocity = this.angularVelocity;
 		yield return new WaitForSeconds(timeDelay);
-		rigidbody.velocity = initialVelocity;
-		rigidbody.useGravity = true;
-		if (rigidbody.velocity.magnitude == 0) {
-			audio.Stop ();
+		GetComponent<Rigidbody>().velocity = initialVelocity;
+		GetComponent<Rigidbody>().useGravity = true;
+		if (GetComponent<Rigidbody>().velocity.magnitude == 0) {
+			GetComponent<AudioSource>().Stop ();
 		}
 
 	}
@@ -43,8 +43,8 @@ public class BoulderRoll : Activatable {
     {
         transform.position = initPos;
         transform.rotation = initRot;
-        rigidbody.angularVelocity = Vector3.zero;
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.useGravity = false;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().useGravity = false;
     }
 }

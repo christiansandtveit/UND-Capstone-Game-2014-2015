@@ -7,6 +7,7 @@ public class FallingPlatform : AbstractResetable {
 
 	public float fallTimeDelay = 2.0f;
 	public float fallDistance = 150.0f;
+	public float fallRespawnDelay = 15.0f; //seconds before the platform will respawn after falling
 	private float finalHeight;
 	private Vector3 originalLoc;
 
@@ -20,8 +21,8 @@ public class FallingPlatform : AbstractResetable {
 	{
 		if (Other.tag == "Player") 
 		{
-			if (!audio.isPlaying) {
-					audio.Play ();
+			if (!GetComponent<AudioSource>().isPlaying) {
+					GetComponent<AudioSource>().Play ();
 			}
 
 			print ("I'm starting to fall!");
@@ -33,20 +34,26 @@ public class FallingPlatform : AbstractResetable {
 	IEnumerator Fall()
 	{
 		yield return new WaitForSeconds(fallTimeDelay);
-		rigidbody.isKinematic = false;
-		rigidbody.useGravity = true;
+		GetComponent<Rigidbody>().isKinematic = false;
+		GetComponent<Rigidbody>().useGravity = true;
 		while(transform.position.y > finalHeight)
 		{
 			yield return null;
 		}
-		rigidbody.isKinematic = true;
-		rigidbody.useGravity = false;
+		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody>().useGravity = false;
+		//respawn code
+		yield return new WaitForSeconds(fallTimeDelay);
+		this.transform.position = originalLoc;
+		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody>().useGravity = false;
+		//end of respawn code
 	}
 
 	public override void Reset()
 	{
 		this.transform.position = originalLoc;
-		rigidbody.isKinematic = true;
-		rigidbody.useGravity = false;
+		GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody>().useGravity = false;
 	}
 }

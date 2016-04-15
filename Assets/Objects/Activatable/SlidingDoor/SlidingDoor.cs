@@ -18,13 +18,13 @@ public class SlidingDoor : Activatable {
 
 	public override void Activate ()
 	{
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 		targetLocation.y = originalLoc.y + heightToRaise;
 	}
 
 	public override void Deactivate ()
 	{
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 		targetLocation.y = originalLoc.y;
 	}
 
@@ -62,7 +62,7 @@ public class SlidingDoor : Activatable {
 
 		else
 		{	
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 		}
 	}
 

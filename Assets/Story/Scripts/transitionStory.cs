@@ -13,7 +13,7 @@ public class transitionStory : MonoBehaviour {
 		AudioListener.pause = false;
 		transitionStill = Resources.Load ("TransitionStill") as Texture;
 		beginTime = Time.time;
-		audio.Play ();
+		GetComponent<AudioSource>().Play ();
 	}
 	
 	void LateUpdate () {

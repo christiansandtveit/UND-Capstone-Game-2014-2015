@@ -23,7 +23,7 @@ public class EndingScript : MonoBehaviour {
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
-        Ray ray = camera.ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
+        Ray ray = GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y)); //Ray goes towards middle of screen
 
         if (Input.GetButton("Interact")) //If interact button is pressed, a ray will be sent out
         {
@@ -32,7 +32,7 @@ public class EndingScript : MonoBehaviour {
                 if (hit.collider.tag == "Key1") //If the ray hit the object with label Lever1
                 {
                     GameObject k1 = GameObject.FindWithTag("Key1");
-                    k1.renderer.enabled = false;
+                    k1.GetComponent<Renderer>().enabled = false;
                     KeyManager.timeKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");
@@ -41,7 +41,7 @@ public class EndingScript : MonoBehaviour {
                 if (hit.collider.tag == "Key2") //If the ray hit the object with label Lever1
                 {
                     GameObject k2 = GameObject.FindWithTag("Key2");
-                    k2.renderer.enabled = false;
+                    k2.GetComponent<Renderer>().enabled = false;
                     KeyManager.teleKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");
@@ -50,7 +50,7 @@ public class EndingScript : MonoBehaviour {
                 if (hit.collider.tag == "Key3") //If the ray hit the object with label Lever1
                 {
                     GameObject k3 = GameObject.FindWithTag("Key3");
-                    k3.renderer.enabled = false;
+                    k3.GetComponent<Renderer>().enabled = false;
                     KeyManager.iceKeyCollected = true;
                     showTextKey = true;
                     print("interactWithKey");

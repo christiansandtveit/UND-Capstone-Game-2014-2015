@@ -14,7 +14,7 @@ public class Key : Interactable {
 	public override void Interact (Transform interactor)
 	{
 		keyKeeper.Increase();
-		AudioSource.PlayClipAtPoint (audio.clip, transform.position);
+		AudioSource.PlayClipAtPoint (GetComponent<AudioSource>().clip, transform.position);
 		GameObject.Destroy(this.gameObject);
 	}
 }

@@ -30,7 +30,7 @@ public class Lever : Interactable {
 			}
 			isOn = true;
             print("lever on");
-			audio.Play();
+			GetComponent<AudioSource>().Play();
             animator.SetBool("IsOn", true);
 
 		}
@@ -43,7 +43,7 @@ public class Lever : Interactable {
 			}
             isOn = false;
             print("lever off");
-            audio.Play();
+            GetComponent<AudioSource>().Play();
             animator.SetBool("IsOn", false);
 		}
 	}

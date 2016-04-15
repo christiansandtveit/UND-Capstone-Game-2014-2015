@@ -35,9 +35,9 @@ public class KeyedDoor : Interactable {
 		if (keysLeft <= 0)
 		{
 			GetComponent<SlidingDoor>().Activate();
-			if (audio.isPlaying == false)
+			if (GetComponent<AudioSource>().isPlaying == false)
 			{
-				audio.Play();
+				GetComponent<AudioSource>().Play();
 			}
 		}
 	}

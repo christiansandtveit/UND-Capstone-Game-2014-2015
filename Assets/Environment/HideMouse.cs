@@ -7,7 +7,7 @@ public class HideMouse : MonoBehaviour {
 	public bool hidden=false;
 	// Use this for initialization
 	void Start () {
-		Screen.showCursor = hidden;
+		Cursor.visible = hidden;
 	}
 	
 	// Update is called once per frame

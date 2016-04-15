@@ -31,13 +31,13 @@ public class Manager : MonoBehaviour
 			}
 		}
 		if (motor.IsSprinting () && motor.movement.velocity.magnitude >= 0.5) {
-			if (!audio.isPlaying) {
-				audio.Play ();
+			if (!GetComponent<AudioSource>().isPlaying) {
+				GetComponent<AudioSource>().Play ();
 			}
 		}
 		else
 		{
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 		}
 		if (Input.GetButtonDown ("Jump") && motor.grounded)
 		{
