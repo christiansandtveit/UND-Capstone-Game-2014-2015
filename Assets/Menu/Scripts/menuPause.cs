@@ -36,6 +36,8 @@ public class menuPause : MonoBehaviour
 		spaceImage = Resources.Load ("SpaceKey") as Texture;
 		shiftImage = Resources.Load ("ShiftKey") as Texture;
 		blackScreen = Resources.Load ("BlackScreen") as Texture;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 	}
 	
 	void LateUpdate () {
@@ -128,6 +130,7 @@ public class menuPause : MonoBehaviour
 	
 	public void PauseGame(bool check) {
 		Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 		savedTimeScale = Time.timeScale;
 		Time.timeScale = 0;
 		AudioListener.pause = true;
@@ -154,6 +157,7 @@ public class menuPause : MonoBehaviour
 			currentPage = Page.None;
 		}
 		Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 	}
 	
 	bool IsGamePaused() {
