@@ -1,0 +1,19 @@
+This is basic information regarding this game:
+Unity version: 5.3.4f1 //any version of Unity 5 should import it without problems
+
+Information on rut files:
+Assets:         Meshes and textures and levels go here they are basically anything 
+                unity needs to make the game //warning this directory is a mess 
+Blender Files:  these are some of the blender files for the game and this 
+                directory it used to modify meshes and not mess up the originals
+                the directory is not used by Unity in any way can can be deleted
+Documentation:  documentation on the game
+Launch_Data:    Unknown
+Library:        Data made by Unity and should never be included in git
+obj:            Unknown
+ProjectSettings: setting for the project
+
+Hidden Files:
+.git: where git stores its commits 
+.vs:  git file //not sure what this file is
+

@@ -1,0 +1,10 @@
+To add a new level you must do this:
+1: add a new scene
+2: do to file build settings then scenes in build and find your scene and click it so it is checked
+3: go to the mainmenu level's main camera 
+4: edit the scpt named menu main
+5: in the showLevels function add before EndPage but replace yourScene with the name of your scene
+if (GUILayout.Button ("yourScene")) {
+SceneManager.LoadScene("yourScene");
+}
+6: find the script named Endpoint and add a new one it to make your end point

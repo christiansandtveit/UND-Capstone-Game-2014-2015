@@ -1,0 +1,38 @@
+This is a step by step process on how to get this project started
+If git is not required or you already know it then skip to C
+
+A: Getting git set up
+    1: Go to "github.com"
+    2: create an account and login
+    3: go to "https://github.com/MatthewNelson2015/UND-Capstone-Game-2014-2015" //please change this link to yours after you finish
+    4: Click fork and fork it to your account
+    5: go to "https://git-scm.com/downloads" and download and install the git for your os
+    6: then login git in the gui
+    7: click the + in the top left of the gui and select clone from the tabs on the top
+    8: then select the correct repository and clone it
+B: Making branches in git
+    1: select the create new branch button which is in the tip left of the gui above the gray area
+    2: name the new branch and use the from branch to switch what branch you are branching from and then click create new branch
+C: Setting up Unity
+    1: download and install unity
+    2: open unity and login to your unity account
+    3: select open on the Unity gui
+    4: find where you told git to put the game and tell unity that that is the project
+    5: unity will import all the the assets and this will take a long time
+D: Getting to levels
+    1: Use the navigation in unity which is at the bottom of the gui and labeled project and find assets
+    2: find the folder scenes in the assets folder
+    3: double click on the scene you want to open and unity will load it as the current scene
+C: editing things
+    1: select what you want to edit ether from the scene window or from the hierarchy window
+    2: the inspector window will then be populated with data
+    3: list of useful components in the inspector window
+        A: transform; handles how you want to change the object, ie position rotation and scale
+        B: mesh renderer; handles how the mesh is displayed and material is the texture
+        C: animator; if the object is animated this is what manages it if there is not a scripted for it (the spiders in level one use a script and an animator)
+        D: mesh collider; this is very important if it is not there or not on you will fall through it makes it solid (sometime it will not work and then you need to make it convex see the ice block in the iceCave as an example)
+        E: scripts; they do what you would expect them to do but they cannot be turned off, open them by clicking on the gear and selecting edit script
+D: Known import problem
+Sometime it will not load all the assets and then the level will only have the torches and thing like that
+the levels will not be playable.  It is caused by the importer not importing all the assets but it is 
+unknown how to fix this problem.
